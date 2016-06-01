@@ -1,0 +1,50 @@
+{
+  "name": "onesingle-ted",
+  "version": "1.0.0",
+  "description": "Skeleton basado en HTML5 Boilerplated, SASS, Gulp y Bower",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlondono/onesingle-ted.git"
+  },
+  "keywords": [
+    "OpenSource",
+    "Development",
+    "Web",
+    "WebDevelopment",
+    "Gulp",
+    "Bower",
+    "SASS",
+    "JavaScript",
+    "Boilerplated"
+  ],
+  "author": "Diego Londoño Marín <dlondonom@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlondono/onesingle-ted/issues"
+  },
+  "homepage": "https://github.com/dlondono/onesingle-ted#readme",
+  "private": true,
+  "dependencies": {
+    "browser-sync": "^2.12.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-bower": "0.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "main-bower-files": "^2.11.1",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.8.0"
+  }
+}

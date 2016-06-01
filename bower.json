@@ -1,0 +1,40 @@
+{
+  "name": "onesingle-ted",
+  "description": "Skeleton basado en HTML5 Boilerplated, SASS, Gulp y Bower",
+  "main": "public/index.html",
+  "authors": [
+    "Diego Londoño Marín <dlondonom@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "OpenSource",
+    "Development",
+    "Web",
+    "WebDevelopment",
+    "Gulp",
+    "Bower",
+    "SASS",
+    "JavaScript",
+    "Boilerplated"
+  ],
+  "homepage": "https://github.com/dlondono/onesingle-ted",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "bootstrap": "^3.3.6",
+    "modernizer": "^2.8.2",
+    "prefixfree": "*",
+    "REM-unit-polyfill": "^1.3.4",
+    "lodash": "^4.13.1",
+    "purl": "^2.3.1"
+  }
+}
