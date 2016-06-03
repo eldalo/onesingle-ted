@@ -12,14 +12,11 @@ var gulp    = require('gulp'),
 
 var paths = {
         in : {
-            bower      : 'resources/bower_components/',
-            components : 'resources/components/',
             public     : 'public/',
             scripts    : 'resources/js/',
             sass       : 'resources/sass/'
         },
         out : {
-            components : 'resources/components',
             fonts      : 'public/fonts',
             public     : 'public',
             scripts    : 'public/js',
@@ -60,14 +57,8 @@ gulp.task('scripts', function() {
         }) );
 });
 
-
-gulp.task('bower', function() {
-    return gulp.src( bowerFiles() )
-            .pipe( gulp.dest(paths.out.components) );
-});
-
 gulp.task('bower_styles', function() {
-    return gulp.src( paths.in.components + files.css )
+    return gulp.src( bowerFiles('**/' + files.css) )
             .pipe( concat('components.min.css') )
             .pipe( minifyCSS() )
             .pipe( gulp.dest(paths.out.styles) )
@@ -77,15 +68,14 @@ gulp.task('bower_styles', function() {
 });
 
 gulp.task('bower_scripts', function() {
-    return gulp.src( paths.in.components + files.js )
-        .pipe( concat('components.min.js') )
-        .pipe( uglify() )
-        .pipe( gulp.dest(paths.out.scripts) )
-        .pipe( notify( function(file) {
-            return 'Bower JS Compiler file: '+ file.relative;
-        }) );
+    return gulp.src( bowerFiles('**/' + files.js) )
+            .pipe( concat('components.min.js') )
+            .pipe( uglify() )
+            .pipe( gulp.dest(paths.out.scripts) )
+            .pipe( notify( function(file) {
+                return 'Bower Compiler file: '+ file.relative;
+            }) );
 });
-
 
 gulp.task('browser_sync', function() {
     browserSync.init(null, {
@@ -100,10 +90,7 @@ gulp.task('bs_reload', function() {
 gulp.task('watch', function() {
     gulp.watch( paths.in.sass + files.sass, ['styles'] );
     gulp.watch( paths.in.scripts + files.js, ['scripts'] );
-    gulp.watch( paths.in.bower + '**', ['bower'] );
-    gulp.watch( paths.in.components + files.css, ['bower_styles'] );
-    gulp.watch( paths.in.components + files.js, ['bower_scripts'] );
     gulp.watch( paths.in.app + files.html, ['bs_reload'] );
 });
 
-gulp.task('default', [ 'styles', 'scripts', 'bower', 'bower_styles', 'bower_scripts', 'browser_sync', 'watch' ]);
+gulp.task('default', [ 'styles', 'scripts', 'bower_styles', 'bower_scripts', 'browser_sync', 'watch' ]);
