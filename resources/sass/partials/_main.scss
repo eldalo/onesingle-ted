@@ -1,1 +1,41 @@
-#main {}
+#main {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+
+    h1 {
+        @include fonts(white, $light, 65);
+        text-align: center;
+
+        strong {
+            font-family: $regular;
+            font-weight: normal;
+        }
+    }
+
+    #main-redes {
+        bottom: 10%;
+        left: 0;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+
+        a {
+            color: white;
+            display: inline-block;
+            font-size: rem(20);
+            margin: 0 15px;
+            opacity: .5;
+            transition: all .25s ease-in-out;
+            vertical-align: top;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+        }
+    }
+}
